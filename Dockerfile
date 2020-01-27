@@ -4,7 +4,7 @@ MAINTAINER Richard Chesterwood "contact@virtualpairprogrammers.com"
 
 EXPOSE 8080
 
-WORKDIR /usr/local/bin/
+WORKDIR /usr/share/automation
 
 COPY target/fleetman-0.0.1-SNAPSHOT.jar webapp.jar
 
