@@ -8,7 +8,8 @@ pipeline {
 
    stages {
       stage('Preparation') {
-         steps {			
+         steps {
+			echo "aaaaaaaaaaaaaaaaaaaaa ${REPOSITORY_TAG}"		 
             cleanWs()
             git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
          }
@@ -26,8 +27,7 @@ pipeline {
       }
 
       stage('Build and Push Image') {
-         steps {
-		   echo '$REPOSITORY_TAG'
+         steps {		   
            sh 'docker image build -f Dockerfile -t ${REPOSITORY_TAG} .'
          }
       }
