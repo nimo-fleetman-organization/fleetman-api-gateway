@@ -10,7 +10,7 @@ pipeline {
       stage('Preparation') {
          steps {
 			script{
-				System.out.println("aaaaaaaaaaaaaaaaaaaaa " + new File().getAbsolutePath())
+				System.out.println("aaaaaaaaaaaaaaaaaaaaa " + new File("file").getAbsolutePath())
 			}
             cleanWs()
             git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
