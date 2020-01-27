@@ -9,9 +9,8 @@ pipeline {
    stages {
       stage('Preparation') {
          steps {
-			script{
-				print("aaaaaaaaaaaaaaaaaaaaa " + new File("file").getAbsolutePath())
-			}
+			echo 'ssssssssssssssssssssssssssssssssss'
+			sh 'pwd'
             cleanWs()
             git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
          }
